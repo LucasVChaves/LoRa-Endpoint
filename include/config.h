@@ -2,6 +2,16 @@
 #define CONFIG_H
 
 // =================================================================
+// CONFIGURAÇÕES DE SLEEP
+// =================================================================
+
+// Tempo que o dispositivo ficará em modo de sono profundo (Deep Sleep).
+const uint8_t SLEEP_INTERVAL_HOURS = 3;
+
+// Conversão do intervalo para microssegundos
+const uint64_t SLEEP_INTERVAL_US = (uint64_t)SLEEP_INTERVAL_HOURS * 3600 * 1000000;
+
+// =================================================================
 // CONFIGURAÇÕES DE LOGGING E DEBUG
 // =================================================================
 
@@ -25,6 +35,6 @@
 #define LORA_M1_PIN 21
 
 // LED de status
-#define LED_BUILTIN 2
+#define LED_BUILT_IN 2
 
 #endif

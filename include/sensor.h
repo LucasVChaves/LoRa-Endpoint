@@ -3,7 +3,7 @@
 
 class Sensor {
 public:
-    virtual ~Sensor();
+    virtual ~Sensor() = default;
     virtual bool setup() = 0;
     virtual float read() = 0; 
 };
