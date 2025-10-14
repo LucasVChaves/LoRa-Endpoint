@@ -22,7 +22,7 @@ Pode ser hospedado num Raspberry Pi ou similar com um serviço como [ChirpStack]
 Pode rodar no mesmo dispositivo que o de Rede; Utiliza [RabbitMQ](https://www.rabbitmq.com/) ou outro similar como broker para gerenciar as queues de mensagens; Pro banco de dados é possível usar o SQLite que é mais leve, ou um banco de séries temporais como [InfluxDB](https://www.influxdata.com/) (pago); A interface do usuário deve ser um Dashboard, acredito que o melhor seja utilizar [Grafana](https://grafana.com/) e fazer na web.
 
 ## Diagrama
-![[Rede LoRa 2025-05-03 11.01.09.excalidraw]]
+![Diagrama da Topologia da Rede](./net_topology.png)
 
 # Considerações
 ## Segurança

@@ -10,13 +10,11 @@ O projeto é parte de uma solução de IoT maior que visa fornecer uma rede de c
 
 A arquitetura da rede é baseada no protocolo LoRaWAN, seguindo uma topologia star-of-stars. Endpoints com sensores se conectam a gateways locais, que então encaminham os dados para os servidores de rede e de aplicação.
 
-Para uma descrição detalhada dos componentes da rede (Endpoints, Gateways, Servidores) e um diagrama do sistema, por favor, consulte o documento de [Topologia da Rede](./net_topology.md).
+Para uma descrição detalhada dos componentes da rede (Endpoints, Gateways, Servidores) e um diagrama do sistema, por favor, consulte o documento de [Topologia da Rede](./doc/net_topology.md).
 
 ## Arquitetura do Firmware
 
-O firmware foi projetado com uma arquitetura modular e em camadas para garantir escalabilidade, manutenibilidade e facilidade de desenvolvimento.
-
-### Conceitos Chave da Arquitetura:
+O firmware foi projetado com uma arquitetura modular e em camadas para garantir escalabilidade, manutenibilidade e facilidade de desenvolvimento:
 
 - Design em Camadas: O código é separado em três camadas principais:
     - Camada de Aplicação: Uma Máquina de Estados Finitos (FSM) controla o fluxo lógico principal (Inicializar, Ler Sensores, Transmitir, Dormir).
@@ -25,7 +23,7 @@ O firmware foi projetado com uma arquitetura modular e em camadas para garantir 
 - Abstração de Sensores: Uma interface Sensor é utilizada para desacoplar a aplicação principal das implementações de sensores específicos. Isso permite adicionar novos sensores sem alterar a lógica central da aplicação.
 - Baixo Consumo por Design: A aplicação opera de forma cíclica, acordando para realizar tarefas e, em seguida, entrando em modo de sono profundo (Deep Sleep) para conservar a energia da bateria.
 
-![Diagrama da Arquitetura do Firmware](./arch_diagram.png)
+![Diagrama da Arquitetura do Firmware](./doc/arch_diagram.png)
 
 ## Como Contribuir
 
