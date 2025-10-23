@@ -14,7 +14,7 @@ bool LoraManager::setup() {
     digitalWrite(LORA_M0_PIN, LOW);
     digitalWrite(LORA_M1_PIN, LOW);
     
-    Serial2.begin(9600, SERIAL_8N1, LORA_RX_PIN, LORA_TX_PIN);
+    Serial2.begin(LORA2ESP_BAUDRATE, SERIAL_8N1, LORA_RX_PIN, LORA_TX_PIN);
     e220ttl.begin();
 
     delay(1000); // Delay de estabilização

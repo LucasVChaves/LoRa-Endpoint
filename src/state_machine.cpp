@@ -1,6 +1,7 @@
 #include "state_machine.h"
 #include "config.h"
 #include "esp_log.h"
+#include <iomanip>
 
 StateMachine::StateMachine(Sensor& sensor, LoraManager& lora, PowerManager& power)
     : sensor(sensor), lora(lora), power(power), currentState(STATE_INIT) {}
@@ -74,5 +75,5 @@ void StateMachine::handleSleep() {
 void StateMachine::handleError() {
     ESP_LOGE(TAG_FSM, "Estado: ERRO. O sistema irá dormir para economizar energia.");
     // TODO: Piscar um led ou beep num buzzer pra alertar erro.
-    power.sleep(60);
+    power.sleep(10);
 }

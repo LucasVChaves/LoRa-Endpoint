@@ -41,4 +41,10 @@ const uint64_t SLEEP_INTERVAL_US = (uint64_t)SLEEP_INTERVAL_HOURS * 3600 * 10000
 // LED de status
 #define LED_BUILT_IN 2
 
+// =================================================================
+// CONFIGURAÇÕES DE COMUNICAÇÃO UART
+// =================================================================
+
+#define LORA2ESP_BAUDRATE 9600
+
 #endif

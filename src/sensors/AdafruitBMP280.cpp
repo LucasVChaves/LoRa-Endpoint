@@ -1,11 +1,15 @@
 #include "AdafruitBMP280.h"
 #include "config.h"
 #include "esp_log.h"
+#include <Wire.h>
 
 Bmp280Sensor::Bmp280Sensor() : bmp(Adafruit_BMP280()) {}
 
 bool Bmp280Sensor::setup() {
     ESP_LOGI(TAG_BMP280, "Inicializando sensor BMP280...");
+
+    Wire.begin(BMP280_SDA, BMP280_SCL);
+
     if (!bmp.begin()) {
         ESP_LOGE(TAG_BMP280, "Não foi possível encontrar o sensor BMP280, verifique a conexão!");
         return false;
